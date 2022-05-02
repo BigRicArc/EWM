@@ -6,6 +6,7 @@ Changes from default dwm
 - Modified keybindings
 - Fullscreen mode
 - FullGaps patch applied
+- Status.sh a very minimal status bar with volume, brightness, battery and date information.
 - This puppy can swallow windows like a beast (i.e. has swallow patch applied)
 
 dwm - dynamic window manager
