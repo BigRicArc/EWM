@@ -9,9 +9,9 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int swallowfloating    = 0;
-static const char *upvol[]   = { "/usr/bin/pactl", "set-sink-volume", "0", "+5%",     NULL };
-static const char *downvol[] = { "/usr/bin/pactl", "set-sink-volume", "0", "-5%",     NULL };
-static const char *mutevol[] = { "/usr/bin/pactl", "set-sink-mute",   "0", "toggle",  NULL };
+static const char *upvol[]   = { "/usr/bin/pulseaudio-ctl", "up",    NULL };
+static const char *downvol[] = { "/usr/bin/pulseaudio-ctl", "down",  NULL };
+static const char *mutevol[] = { "/usr/bin/pulseaudio-ctl", "mute",  NULL };
 static const char *light_up[] = {"/usr/bin/brightnessctl", "s", "+5%", NULL};
 static const char *light_down[] = {"/usr/bin/brightnessctl", "s", "5%-", NULL};
 static const char *fonts[]          = { "monospace:size=11" };
@@ -70,7 +70,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 static const char *browser[]  = { "brave", NULL };
-static const char *ranger[]   = { "alacritty", "ranger", NULL };
+static const char *killStat[]   = { "killStat", NULL };
 
 
 static Key keys[] = {
@@ -80,10 +80,14 @@ static Key keys[] = {
 	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
 	{ 0,				XF86XK_MonBrightnessUp,	spawn,	{.v = light_up } },
 	{ 0,				XF86XK_MonBrightnessDown, spawn, {.v = light_down } },
-	{ MODKEY,                       XK_r,      spawn,          {.v = ranger } },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = browser } },
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = killStat } },
+	{ 0,                            XF86XK_AudioMute, spawn, {.v = killStat } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = killStat } },
+	{ 0,				XF86XK_MonBrightnessUp,	spawn,	{.v = killStat } },
+	{ 0,				XF86XK_MonBrightnessDown, spawn, {.v = killStat } },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_w,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
