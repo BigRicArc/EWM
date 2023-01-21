@@ -1,3 +1,14 @@
+Changes from default dwm
+=========================
+
+- Volume control via pulse audio
+- Brightness Control via brightnessctl
+- Modified keybindings
+- Fullscreen mode
+- FullGaps patch applied
+- Status.sh a very minimal status bar with volume, brightness, battery and date information.
+- This puppy can swallow windows like a beast (i.e. has swallow patch applied)
+
 dwm - dynamic window manager
 ============================
 dwm is an extremely fast, small, and dynamic window manager for X.
@@ -6,6 +17,15 @@ dwm is an extremely fast, small, and dynamic window manager for X.
 Requirements
 ------------
 In order to build dwm you need the Xlib header files.
+
+Optionally this build is using:
+
+- Alacritty
+- Dmenu
+- Brave
+- Compton (aka picom)
+- Brightnessctl
+- Pulse Audio
 
 
 Installation
