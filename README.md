@@ -1,5 +1,11 @@
+
+
+dwm - dynamic window manager
+============================
+dwm is an extremely fast, small, and dynamic window manager for X.
+
 Changes from default dwm
-=========================
+------------------------
 
 - Volume control via pulse audio
 - Brightness Control via brightnessctl
@@ -8,10 +14,6 @@ Changes from default dwm
 - FullGaps patch applied
 - Status.sh a very minimal status bar with volume, brightness, battery and date information.
 - This puppy can swallow windows like a beast (i.e. has swallow patch applied)
-
-dwm - dynamic window manager
-============================
-dwm is an extremely fast, small, and dynamic window manager for X.
 
 
 Requirements
